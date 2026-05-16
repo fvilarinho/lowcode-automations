@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+export INSTALL_DIR="$HOME/camera"
+
+export MOTION_CMD="$(which motion)"
+export PYTHON_CMD="$(which python3)"
+export FREE_CMD="$(which free)"
+export DF_CMD="$(which df)"
+export VCGEN_CMD="$(which vcgencmd)"
+export SED_CMD="$(which sed)"
+export AWK_CMD="$(which awk)"
+export GREP_CMD="$(which grep)"

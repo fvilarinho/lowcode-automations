@@ -1,0 +1,1596 @@
+[
+    {
+        "id": "52192d8d43a254f1",
+        "type": "tab",
+        "label": "Office Camera Actions",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3196f6205bf0fcec",
+        "type": "tab",
+        "label": "Bedroom Camera Actions",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4ad394f877cfa1b5",
+        "type": "tab",
+        "label": "Office Camera Stats",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "53fed4e662138454",
+        "type": "tab",
+        "label": "Bedroom Camera Stats",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3c943c31a20fce2d",
+        "type": "tab",
+        "label": "Cameras API",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a6bac5151eedc9b6",
+        "type": "ssh-conf",
+        "ssh": "/usr/src/node-red/.ssh/id_rsa",
+        "name": "officeCamera",
+        "userlabel": "officeCamera"
+    },
+    {
+        "id": "24881878e9755824",
+        "type": "ssh-conf",
+        "ssh": "/usr/src/node-red/.ssh/id_rsa",
+        "name": "bedroomCamera",
+        "userlabel": "bedroomCamera"
+    },
+    {
+        "id": "67a52cbb7c918372",
+        "type": "global-config",
+        "env": [
+            {
+                "name": "camera_hostname",
+                "value": "cameras.vila.net.br",
+                "type": "str"
+            },
+            {
+                "name": "camera_home_dir",
+                "value": "/home/fvilarinho/camera",
+                "type": "str"
+            },
+            {
+                "name": "office_camera_token",
+                "value": "b02080d8bfce05756a7f83bf0294b5b2",
+                "type": "str"
+            },
+            {
+                "name": "bedroom_camera_token",
+                "value": "b02080d8bfce05756a7f83bf0294b5b2",
+                "type": "str"
+            }
+        ],
+        "modules": {
+            "node-red-contrib-ssh-v3": "2.0.5",
+            "node-red-contrib-virtual-smart-home": "4.5.1",
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-cron": "0.0.4"
+        }
+    },
+    {
+        "id": "9e26829028792add",
+        "type": "vsh-connection",
+        "name": "fvilarinho@gmail.com",
+        "port": "8883",
+        "accessTokenExpiry": "1764891661823",
+        "debug": false,
+        "backendUrl": "https://kfd5m4a21f.execute-api.eu-west-1.amazonaws.com/dev",
+        "lwaClientId": "amzn1.application-oa2-client.3f1bb07133854b078261ad43f2484c18"
+    },
+    {
+        "id": "abdef23c0eb8eba0",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "daa90e6ae7ef3c18",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "432e55d2edf9a2ae",
+        "type": "ui_group",
+        "name": "Office Camera",
+        "tab": "daa90e6ae7ef3c18",
+        "order": 1,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eeea16725d73d1a1",
+        "type": "ui_group",
+        "name": "Bedroom Camera",
+        "tab": "daa90e6ae7ef3c18",
+        "order": 2,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "801e76f86d9e648c",
+        "type": "inject",
+        "z": "52192d8d43a254f1",
+        "name": "Turn on Office Camera",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"camera\":\"office\",\"switch\":\"on\",\"action\":\"turn_on_off\"}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "e00fc11d6cacd55b"
+            ]
+        ]
+    },
+    {
+        "id": "d1e8047210167662",
+        "type": "ssh-v3",
+        "z": "52192d8d43a254f1",
+        "name": "Office Camera Device",
+        "conf": "a6bac5151eedc9b6",
+        "debug": false,
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "bb6bce4af3f8b09a",
+                "6f55d439056220e5"
+            ]
+        ]
+    },
+    {
+        "id": "685d743059c10b6d",
+        "type": "inject",
+        "z": "52192d8d43a254f1",
+        "name": "Turn off Office Camera",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"camera\":\"office\",\"switch\":\"off\",\"action\":\"turn_on_off\"}",
+        "payloadType": "json",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "e00fc11d6cacd55b"
+            ]
+        ]
+    },
+    {
+        "id": "1217d1c09c8d82bc",
+        "type": "function",
+        "z": "52192d8d43a254f1",
+        "name": "Set payload for the device",
+        "func": "msg.camera = msg.payload.camera;\nmsg.switch = msg.payload.switch;\n\nif(msg.switch == \"on\") {\n    msg.viewport = \"<center><a href='https://\" + env.get(\"camera_hostname\") + \"/\" + msg.camera + \"' target='_\" + msg.camera + \"'>View Port</a></center>\";\n    msg.payload = env.get(\"camera_home_dir\") + \"/motion/start.sh\";\n}\nelse {\n    msg.viewport = \"\";\n    msg.payload = env.get(\"camera_home_dir\") + \"/motion/stop.sh\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 100,
+        "wires": [
+            [
+                "d1e8047210167662"
+            ]
+        ]
+    },
+    {
+        "id": "eda5bc96fc26a776",
+        "type": "function",
+        "z": "52192d8d43a254f1",
+        "name": "Set payload for the switch",
+        "func": "msg.payload = {\n    camera: \"office\",\n    action: \"turn_on_off\",\n    switch: msg.payload.powerState.toLowerCase()\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "e00fc11d6cacd55b"
+            ]
+        ]
+    },
+    {
+        "id": "1d8933f4bcc2af1b",
+        "type": "vsh-virtual-device",
+        "z": "52192d8d43a254f1",
+        "name": "Office Camera",
+        "topic": "",
+        "metadata": "",
+        "connection": "9e26829028792add",
+        "template": "SWITCH",
+        "retrievable": true,
+        "passthrough": true,
+        "diff": false,
+        "filter": false,
+        "filterTopic": false,
+        "plan": "free",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "eda5bc96fc26a776"
+            ]
+        ]
+    },
+    {
+        "id": "6f55d439056220e5",
+        "type": "function",
+        "z": "52192d8d43a254f1",
+        "name": "Set payload for the notifications",
+        "func": "msg.payload = msg.camera + \" camera was turned \" + msg.switch;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "3d83fe25c5f1009d",
+                "f5bf551fb8bf6db7"
+            ]
+        ]
+    },
+    {
+        "id": "e00fc11d6cacd55b",
+        "type": "ui_switch",
+        "z": "52192d8d43a254f1",
+        "name": "Office Camera Switch",
+        "label": "",
+        "tooltip": "",
+        "group": "432e55d2edf9a2ae",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "{\"camera\": \"office\", \"switch\":\"on\", \"action\": \"turn_on_off\"}",
+        "onvalueType": "json",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "{\"camera\": \"office\", \"switch\":\"off\", \"action\": \"turn_on_off\"}",
+        "offvalueType": "json",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "1217d1c09c8d82bc"
+            ]
+        ]
+    },
+    {
+        "id": "f5bf551fb8bf6db7",
+        "type": "ui_audio",
+        "z": "52192d8d43a254f1",
+        "name": "Text to speech",
+        "group": "432e55d2edf9a2ae",
+        "voice": "Google US English",
+        "always": true,
+        "x": 1040,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3d83fe25c5f1009d",
+        "type": "ui_toast",
+        "z": "52192d8d43a254f1",
+        "position": "top right",
+        "displayTime": "2",
+        "highlight": "border: none",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "",
+        "name": "Notification Popup",
+        "x": 1050,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "bb6bce4af3f8b09a",
+        "type": "ui_template",
+        "z": "52192d8d43a254f1",
+        "group": "432e55d2edf9a2ae",
+        "name": "Office Camera Viewport",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "format": "<div ng-bind-html=\"msg.viewport\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 730,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54265ff0c9797dc2",
+        "type": "link in",
+        "z": "52192d8d43a254f1",
+        "name": "Office Camera Actions In",
+        "links": [
+            "cd3c7c1ee51fed21"
+        ],
+        "x": 245,
+        "y": 60,
+        "wires": [
+            [
+                "e00fc11d6cacd55b"
+            ]
+        ]
+    },
+    {
+        "id": "2e3603a444057429",
+        "type": "inject",
+        "z": "3196f6205bf0fcec",
+        "name": "Turn on Bedroom Camera",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"camera\":\"bedroom\",\"switch\":\"on\",\"action\":\"turn_on_off\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "b4be3badb6934046"
+            ]
+        ]
+    },
+    {
+        "id": "c0a0dba653e89e6b",
+        "type": "inject",
+        "z": "3196f6205bf0fcec",
+        "name": "Turn off Bedroom Camera",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"camera\":\"bedroom\",\"switch\":\"off\",\"action\":\"turn_on_off\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "b4be3badb6934046"
+            ]
+        ]
+    },
+    {
+        "id": "317fd4ec813d4510",
+        "type": "function",
+        "z": "3196f6205bf0fcec",
+        "name": "Set payload for the device",
+        "func": "msg.camera = msg.payload.camera;\nmsg.switch = msg.payload.switch;\n\nif(msg.switch == \"on\") {\n    msg.viewport = \"<center><a href='https://\" + env.get(\"camera_hostname\") + \"/\" + msg.camera + \"' target='_\" + msg.camera + \"'>View Port</a></center>\";\n    msg.payload = env.get(\"camera_home_dir\") + \"/motion/start.sh\";\n}\nelse {\n    msg.viewport = \"\";\n    msg.payload = env.get(\"camera_home_dir\") + \"/motion/stop.sh\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 100,
+        "wires": [
+            [
+                "b9ce79f61158c020"
+            ]
+        ]
+    },
+    {
+        "id": "b9ce79f61158c020",
+        "type": "ssh-v3",
+        "z": "3196f6205bf0fcec",
+        "name": "Bedroom Camera Device",
+        "conf": "24881878e9755824",
+        "debug": false,
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "d0be33ebaca1b0d4",
+                "1dfdad2857fc6bfe"
+            ]
+        ]
+    },
+    {
+        "id": "3d618aa7e270fc82",
+        "type": "function",
+        "z": "3196f6205bf0fcec",
+        "name": "Set payload for the switch",
+        "func": "msg.payload = {\n    camera: \"bedroom\",\n    action: \"turn_on_off\",\n    switch: msg.payload.powerState.toLowerCase()\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "b4be3badb6934046"
+            ]
+        ]
+    },
+    {
+        "id": "c71df66c2f0db3ea",
+        "type": "vsh-virtual-device",
+        "z": "3196f6205bf0fcec",
+        "name": "Bedroom Camera",
+        "topic": "",
+        "metadata": "",
+        "connection": "9e26829028792add",
+        "template": "SWITCH",
+        "retrievable": true,
+        "passthrough": true,
+        "diff": false,
+        "filter": false,
+        "filterTopic": false,
+        "plan": "free",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "3d618aa7e270fc82"
+            ]
+        ]
+    },
+    {
+        "id": "1dfdad2857fc6bfe",
+        "type": "function",
+        "z": "3196f6205bf0fcec",
+        "name": "Set payload for the notifications",
+        "func": "msg.payload = msg.camera + \" camera was turned \" + msg.switch;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 200,
+        "wires": [
+            [
+                "dda4e889d36c1da8",
+                "4937ba2aeb7771f9"
+            ]
+        ]
+    },
+    {
+        "id": "b4be3badb6934046",
+        "type": "ui_switch",
+        "z": "3196f6205bf0fcec",
+        "name": "Bedroom Camera Switch",
+        "label": "",
+        "tooltip": "",
+        "group": "eeea16725d73d1a1",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "{\"camera\":\"bedroom\",\"switch\":\"on\",\"action\":\"turn_on_off\"}",
+        "onvalueType": "json",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "{\"camera\":\"bedroom\",\"switch\":\"off\",\"action\":\"turn_on_off\"}",
+        "offvalueType": "json",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "317fd4ec813d4510"
+            ]
+        ]
+    },
+    {
+        "id": "4937ba2aeb7771f9",
+        "type": "ui_audio",
+        "z": "3196f6205bf0fcec",
+        "name": "Text to speech",
+        "group": "432e55d2edf9a2ae",
+        "voice": "Google US English",
+        "always": true,
+        "x": 1060,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "dda4e889d36c1da8",
+        "type": "ui_toast",
+        "z": "3196f6205bf0fcec",
+        "position": "top right",
+        "displayTime": "2",
+        "highlight": "border: none",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "",
+        "name": "Notification Popup",
+        "x": 1070,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d0be33ebaca1b0d4",
+        "type": "ui_template",
+        "z": "3196f6205bf0fcec",
+        "group": "eeea16725d73d1a1",
+        "name": "Bedroom Camera Viewport",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "format": "<div ng-bind-html=\"msg.viewport\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 760,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6619febe8d7be56",
+        "type": "link in",
+        "z": "3196f6205bf0fcec",
+        "name": "Bedroom Camera Actions In",
+        "links": [
+            "6e42d1802a4769d3"
+        ],
+        "x": 245,
+        "y": 60,
+        "wires": [
+            [
+                "b4be3badb6934046"
+            ]
+        ]
+    },
+    {
+        "id": "8ab1e534bbb4886d",
+        "type": "ssh-v3",
+        "z": "4ad394f877cfa1b5",
+        "name": "Office Camera Device",
+        "conf": "a6bac5151eedc9b6",
+        "debug": false,
+        "x": 560,
+        "y": 120,
+        "wires": [
+            [
+                "cb65538534b66a53"
+            ]
+        ]
+    },
+    {
+        "id": "6cfdb1b11943acea",
+        "type": "function",
+        "z": "4ad394f877cfa1b5",
+        "name": "Set payload for the device",
+        "func": "msg.payload = env.get(\"camera_home_dir\") + \"/stats.sh\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 60,
+        "wires": [
+            [
+                "8ab1e534bbb4886d"
+            ]
+        ]
+    },
+    {
+        "id": "3c341363d446671f",
+        "type": "link in",
+        "z": "4ad394f877cfa1b5",
+        "name": "Office Camera Stats In",
+        "links": [
+            "94907855b84925cc",
+            "7bc1fb8b3ba68c48"
+        ],
+        "x": 365,
+        "y": 80,
+        "wires": [
+            [
+                "6cfdb1b11943acea"
+            ]
+        ]
+    },
+    {
+        "id": "7c4d1e06e817d6cf",
+        "type": "ui_gauge",
+        "z": "4ad394f877cfa1b5",
+        "name": "Temperature Gauge",
+        "group": "432e55d2edf9a2ae",
+        "order": 1,
+        "width": "5",
+        "height": "2",
+        "gtype": "gage",
+        "title": "",
+        "label": " C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9d08f0d5f99fffe4",
+        "type": "inject",
+        "z": "4ad394f877cfa1b5",
+        "name": "Manual trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "ea8e64e2eec800a6"
+            ]
+        ]
+    },
+    {
+        "id": "cb65538534b66a53",
+        "type": "function",
+        "z": "4ad394f877cfa1b5",
+        "name": "Parse the response",
+        "func": "var payload = \"\"\n\nfor (var i = 0 ; i < msg.session.stdout.length ; i++)\n    payload += msg.session.stdout[i]\n\nmsg.payload = JSON.parse(payload)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 180,
+        "wires": [
+            [
+                "379a8e7f35f289be",
+                "4366d41bd70648aa"
+            ]
+        ]
+    },
+    {
+        "id": "379a8e7f35f289be",
+        "type": "function",
+        "z": "4ad394f877cfa1b5",
+        "name": "Prepare the payload for the gauge",
+        "func": "msg.payload = msg.payload.temp\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "7c4d1e06e817d6cf"
+            ]
+        ]
+    },
+    {
+        "id": "4366d41bd70648aa",
+        "type": "switch",
+        "z": "4ad394f877cfa1b5",
+        "name": "Route the response",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "manual",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "379a8e7f35f289be"
+            ],
+            [
+                "1451101ded8b91e0"
+            ]
+        ]
+    },
+    {
+        "id": "1451101ded8b91e0",
+        "type": "link out",
+        "z": "4ad394f877cfa1b5",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "81bd5559fcdcc6fa"
+        ],
+        "x": 555,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "41bac29e39a86646",
+        "type": "cron",
+        "z": "4ad394f877cfa1b5",
+        "name": "",
+        "crontab": "0 * * * * *",
+        "x": 70,
+        "y": 40,
+        "wires": [
+            [
+                "ea8e64e2eec800a6"
+            ]
+        ]
+    },
+    {
+        "id": "ea8e64e2eec800a6",
+        "type": "function",
+        "z": "4ad394f877cfa1b5",
+        "name": "Prepare to execute",
+        "func": "msg.topic = \"manual\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 40,
+        "wires": [
+            [
+                "6cfdb1b11943acea"
+            ]
+        ]
+    },
+    {
+        "id": "671332e398d2f9f2",
+        "type": "ssh-v3",
+        "z": "53fed4e662138454",
+        "name": "Bedroom Camera Device",
+        "conf": "24881878e9755824",
+        "debug": false,
+        "x": 570,
+        "y": 120,
+        "wires": [
+            [
+                "6a5b37c259ad03d1"
+            ]
+        ]
+    },
+    {
+        "id": "6323e97778648d27",
+        "type": "function",
+        "z": "53fed4e662138454",
+        "name": "Set payload for the device",
+        "func": "msg.payload = env.get(\"camera_home_dir\") + \"/stats.sh\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 60,
+        "wires": [
+            [
+                "671332e398d2f9f2"
+            ]
+        ]
+    },
+    {
+        "id": "e6643564af3e68f1",
+        "type": "ui_gauge",
+        "z": "53fed4e662138454",
+        "name": "Temperature gauge",
+        "group": "eeea16725d73d1a1",
+        "order": 1,
+        "width": "5",
+        "height": "2",
+        "gtype": "gage",
+        "title": "",
+        "label": " C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c7ec300fb0f842e2",
+        "type": "link in",
+        "z": "53fed4e662138454",
+        "name": "Bedroom Camera Stats in",
+        "links": [
+            "7bc1fb8b3ba68c48"
+        ],
+        "x": 365,
+        "y": 80,
+        "wires": [
+            [
+                "6323e97778648d27"
+            ]
+        ]
+    },
+    {
+        "id": "bcd38b417c92be03",
+        "type": "link out",
+        "z": "53fed4e662138454",
+        "name": "Cameras API Out",
+        "mode": "link",
+        "links": [
+            "81bd5559fcdcc6fa"
+        ],
+        "x": 555,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "58ab99279e44087c",
+        "type": "inject",
+        "z": "53fed4e662138454",
+        "name": "Manual trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "fc0229737e6ae424"
+            ]
+        ]
+    },
+    {
+        "id": "97988d3828b177be",
+        "type": "cron",
+        "z": "53fed4e662138454",
+        "name": "",
+        "crontab": "0 * * * * *",
+        "x": 70,
+        "y": 40,
+        "wires": [
+            [
+                "fc0229737e6ae424"
+            ]
+        ]
+    },
+    {
+        "id": "fc0229737e6ae424",
+        "type": "function",
+        "z": "53fed4e662138454",
+        "name": "Prepare to execute",
+        "func": "msg.topic = \"manual\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 40,
+        "wires": [
+            [
+                "6323e97778648d27"
+            ]
+        ]
+    },
+    {
+        "id": "23c03ea34214ebf6",
+        "type": "switch",
+        "z": "53fed4e662138454",
+        "name": "Route the response",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "manual",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "9144a531b43cf1b4"
+            ],
+            [
+                "bcd38b417c92be03"
+            ]
+        ]
+    },
+    {
+        "id": "6a5b37c259ad03d1",
+        "type": "function",
+        "z": "53fed4e662138454",
+        "name": "Parse the response",
+        "func": "var payload = \"\"\n\nfor (var i = 0 ; i < msg.session.stdout.length ; i++)\n    payload += msg.session.stdout[i]\n\nmsg.payload = JSON.parse(payload)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 180,
+        "wires": [
+            [
+                "9144a531b43cf1b4",
+                "23c03ea34214ebf6"
+            ]
+        ]
+    },
+    {
+        "id": "9144a531b43cf1b4",
+        "type": "function",
+        "z": "53fed4e662138454",
+        "name": "Prepare the payload for the gauge",
+        "func": "msg.payload = msg.payload.temp\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "e6643564af3e68f1"
+            ]
+        ]
+    },
+    {
+        "id": "709826cdad71a5f6",
+        "type": "http in",
+        "z": "3c943c31a20fce2d",
+        "name": "Turn on/off",
+        "url": "/api/cameras/:camera/:switch",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 360,
+        "wires": [
+            [
+                "a8f2fa23fe4b5f5b"
+            ]
+        ]
+    },
+    {
+        "id": "2aa517bf93085845",
+        "type": "function",
+        "z": "3c943c31a20fce2d",
+        "name": "Validate the request",
+        "func": "var authorization = msg.req.headers[\"authorization\"];\n\nif (authorization != null) {\n    authorization = authorization.replaceAll(\"Bearer \", \"\");\n    \n    var isValidCamera = (msg.camera != null && (msg.camera == \"office\" || msg.camera == \"bedroom\") ? true : false);\n\n    if (isValidCamera) {\n        if (authorization == env.get(msg.camera + \"_camera_token\")) {\n            if (msg.action == \"turn_on_off\") {\n                var isValidSwitch = (msg.switch != null && (msg.switch == \"on\" || msg.switch == \"off\"));\n\n                if (isValidSwitch)\n                    msg.statusCode = 200;\n                else\n                    msg.statusCode = 400;\n            }\n            else \n                msg.statusCode = 200;\n        }\n        else\n            msg.statusCode = 401;\n    }        \n    else\n        msg.statusCode = 400;\n}\nelse\n    msg.statusCode = 401;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "cc416dcd7253a14a"
+            ]
+        ]
+    },
+    {
+        "id": "cc416dcd7253a14a",
+        "type": "switch",
+        "z": "3c943c31a20fce2d",
+        "name": "Is validated?",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "400",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "401",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "c852bab8da67a417"
+            ],
+            [
+                "1bd9af47414dfed0"
+            ],
+            [
+                "ccec93204b498192"
+            ]
+        ]
+    },
+    {
+        "id": "cd3c7c1ee51fed21",
+        "type": "link out",
+        "z": "3c943c31a20fce2d",
+        "name": "Office Camera Actions Out",
+        "mode": "link",
+        "links": [
+            "54265ff0c9797dc2"
+        ],
+        "x": 815,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "2a3cb97f53f5a122",
+        "type": "switch",
+        "z": "3c943c31a20fce2d",
+        "name": "Forward to the specfied action",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "turn_on_off",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "stats",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "71a8c16abddaa1ea"
+            ],
+            [
+                "7abd730ed88cb49f"
+            ],
+            [
+                "1bd9af47414dfed0"
+            ]
+        ]
+    },
+    {
+        "id": "3cb303fcbcc31e49",
+        "type": "http response",
+        "z": "3c943c31a20fce2d",
+        "name": "api reponse",
+        "statusCode": "",
+        "headers": {},
+        "x": 1010,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1bd9af47414dfed0",
+        "type": "change",
+        "z": "3c943c31a20fce2d",
+        "name": "Bad payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"message\":\"Invalid request!\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "3cb303fcbcc31e49"
+            ]
+        ]
+    },
+    {
+        "id": "d681c37bb1834efe",
+        "type": "function",
+        "z": "3c943c31a20fce2d",
+        "name": "Valid payload",
+        "func": "if (msg.payload.switch == \"on\") {\n    msg.payload = {\n        message: \"The \" + msg.payload.camera + \" camera is \" + msg.payload.switch,\n        url: \"https://cameras.vila.net.br/\" + msg.payload.camera\n    }\n}\nelse {\n    msg.payload = {\n        message: \"The \" + msg.payload.camera + \" camera is \" + msg.payload.switch,\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 60,
+        "wires": [
+            [
+                "3cb303fcbcc31e49"
+            ]
+        ]
+    },
+    {
+        "id": "6e42d1802a4769d3",
+        "type": "link out",
+        "z": "3c943c31a20fce2d",
+        "name": "Bedroom Camera Actions Out",
+        "mode": "link",
+        "links": [
+            "e6619febe8d7be56"
+        ],
+        "x": 815,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ccec93204b498192",
+        "type": "change",
+        "z": "3c943c31a20fce2d",
+        "name": "Not authorized",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"message\":\"Not authorized!\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [
+                "3cb303fcbcc31e49"
+            ]
+        ]
+    },
+    {
+        "id": "0c07addf71252ae4",
+        "type": "http in",
+        "z": "3c943c31a20fce2d",
+        "name": "Stats",
+        "url": "/api/cameras/:camera/stats",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 400,
+        "wires": [
+            [
+                "9c817ac80352d260"
+            ]
+        ]
+    },
+    {
+        "id": "a8f2fa23fe4b5f5b",
+        "type": "function",
+        "z": "3c943c31a20fce2d",
+        "name": "Set action",
+        "func": "msg.action = \"turn_on_off\";\nmsg.camera = msg.req.params.camera;\nmsg.switch = msg.req.params.switch;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "2aa517bf93085845"
+            ]
+        ]
+    },
+    {
+        "id": "9c817ac80352d260",
+        "type": "function",
+        "z": "3c943c31a20fce2d",
+        "name": "Set action",
+        "func": "msg.action = \"stats\";\nmsg.camera = msg.req.params.camera;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "2aa517bf93085845"
+            ]
+        ]
+    },
+    {
+        "id": "c852bab8da67a417",
+        "type": "function",
+        "z": "3c943c31a20fce2d",
+        "name": "Prepare the request to turn on/off the camera",
+        "func": "msg.payload.camera = msg.camera;\n\nif (msg.switch != null)\n    msg.payload.switch = msg.switch;\n\nmsg.payload.action = msg.action;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "2a3cb97f53f5a122"
+            ]
+        ]
+    },
+    {
+        "id": "71a8c16abddaa1ea",
+        "type": "switch",
+        "z": "3c943c31a20fce2d",
+        "name": "Turn On/Off the specfied camera",
+        "property": "payload.camera",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "office",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "bedroom",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 60,
+        "wires": [
+            [
+                "cd3c7c1ee51fed21",
+                "d681c37bb1834efe"
+            ],
+            [
+                "6e42d1802a4769d3",
+                "d681c37bb1834efe"
+            ]
+        ]
+    },
+    {
+        "id": "7abd730ed88cb49f",
+        "type": "switch",
+        "z": "3c943c31a20fce2d",
+        "name": "Get the stats of the specified camera",
+        "property": "payload.camera",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "office",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "bedroom",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 630,
+        "y": 140,
+        "wires": [
+            [
+                "94907855b84925cc"
+            ],
+            [
+                "7bc1fb8b3ba68c48"
+            ]
+        ]
+    },
+    {
+        "id": "94907855b84925cc",
+        "type": "link out",
+        "z": "3c943c31a20fce2d",
+        "name": "Office Camera Stats Out",
+        "mode": "link",
+        "links": [
+            "3c341363d446671f"
+        ],
+        "x": 825,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7bc1fb8b3ba68c48",
+        "type": "link out",
+        "z": "3c943c31a20fce2d",
+        "name": "Bedroom Camera Stats Out",
+        "mode": "link",
+        "links": [
+            "3c341363d446671f",
+            "c7ec300fb0f842e2"
+        ],
+        "x": 825,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "81bd5559fcdcc6fa",
+        "type": "link in",
+        "z": "3c943c31a20fce2d",
+        "name": "Cameras API In",
+        "links": [
+            "bcd38b417c92be03",
+            "1451101ded8b91e0"
+        ],
+        "x": 875,
+        "y": 180,
+        "wires": [
+            [
+                "3cb303fcbcc31e49"
+            ]
+        ]
+    }
+]

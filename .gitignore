@@ -1,0 +1,6 @@
+/nodered/cameras/iac/.terraform*
+/nodered/cameras/iac/terraform.tfstate*
+/nodered/cameras/iac/terraform.tfvars
+/nginx/etc/ssl/*.key
+/nginx/etc/ssl/*.pem
+/nodered/id_rsa

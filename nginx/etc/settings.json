@@ -1,0 +1,10 @@
+{
+	"port": {
+		"description": "Network port to listen the requests.",
+		"value": 80
+	},
+	"securePort": {
+		"description": "Network port to listen the secure requests.",
+		"value": 443
+	}
+}

@@ -1,0 +1,37 @@
+services:
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    hostname: nodered
+    restart: always
+    volumes:
+      - nodered_data:/data
+      - ./nodered/id_rsa:/usr/src/node-red/.ssh/id_rsa
+ 
+  etcd:
+    image: ghcr.io/fvilarinho/etcd:1.2.0
+    container_name: etcd
+    hostname: etcd
+    restart: always
+    volumes:
+      - ./nginx/etc/settings.json:/home/user/etc/nginx.json
+      - etcd_data:/home/user/data
+
+  nginx:
+    image: ghcr.io/fvilarinho/nginx:1.2.0
+    container_name: nginx
+    hostname: nginx
+    restart: always  
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/etc/ssl:/etc/nginx/ssl
+      - ./nginx/etc/conf.d/default.conf:/home/user/etc/nginx/conf.d/default.conf    
+    depends_on:
+      - nodered
+      - etcd
+  
+volumes:
+  nodered_data:
+  etcd_data:
