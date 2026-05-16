@@ -4,3 +4,4 @@
 /nginx/etc/ssl/*.key
 /nginx/etc/ssl/*.pem
 /nodered/id_rsa
+/.idea/
