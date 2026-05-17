@@ -13,12 +13,12 @@ function checkDependencies() {
 }
 
 function issue() {
-  $CERTBOT_CMD certonly -d automation.vila.net.br --preferred-challenges dns-01 --manual -m me@vila.net.br
+  $CERTBOT_CMD certonly -d "$AUTOMATION_SERVER_DOMAIN" --preferred-challenges dns-01 --manual -m "$CERTGEN_EMAIL"
 }
 
 function sync() {
-  cp -f /etc/letsencrypt/live/automation.vila.net.br/fullchain.pem ../etc/ssl/automation.pem
-  cp -f /etc/letsencrypt/live/automation.vila.net.br/privkey.pem ../etc/ssl/automation.key
+  cp -f "/etc/letsencrypt/live/$AUTOMATION_SERVER_DOMAIN/fullchain.pem" ../etc/ssl/automation.pem
+  cp -f "/etc/letsencrypt/live/$AUTOMATION_SERVER_DOMAIN/privkey.pem" ../etc/ssl/automation.key
 }
 
 function main() {
