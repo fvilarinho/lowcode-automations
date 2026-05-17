@@ -5,3 +5,4 @@
 /nginx/etc/ssl/*.pem
 /nodered/id_rsa
 /.idea/
+/nginx/etc/conf.d/default.conf
