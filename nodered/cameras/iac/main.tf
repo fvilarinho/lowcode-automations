@@ -68,6 +68,11 @@ resource "null_resource" "camerasFiles" {
   }
 
   provisioner "file" {
+    source      = "../bin/model.sh"
+    destination = "${each.value.install_dir}/model.sh"
+  }
+
+  provisioner "file" {
     source      = "../bin/stats.sh"
     destination = "${each.value.install_dir}/stats.sh"
   }

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 value=$(ps -def | $AWK_CMD {'print $8'} | $GREP_CMD motion)
 
