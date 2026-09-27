@@ -45,22 +45,22 @@
         "env": [
             {
                 "name": "camera_hostname",
-                "value": "cameras.vila.net.br",
+                "value": "cameras.yourdomain.com",
                 "type": "str"
             },
             {
                 "name": "camera_home_dir",
-                "value": "/home/fvilarinho/camera",
+                "value": "/home/user/camera",
                 "type": "str"
             },
             {
                 "name": "office_camera_token",
-                "value": "b02080d8bfce05756a7f83bf0294b5b2",
+                "value": "1234567890",
                 "type": "str"
             },
             {
                 "name": "bedroom_camera_token",
-                "value": "b02080d8bfce05756a7f83bf0294b5b2",
+                "value": "1234567890",
                 "type": "str"
             }
         ],
@@ -1290,7 +1290,7 @@
         "type": "function",
         "z": "3c943c31a20fce2d",
         "name": "Valid payload",
-        "func": "if (msg.payload.switch == \"on\") {\n    msg.payload = {\n        message: \"The \" + msg.payload.camera + \" camera is \" + msg.payload.switch,\n        url: \"https://cameras.vila.net.br/\" + msg.payload.camera\n    }\n}\nelse {\n    msg.payload = {\n        message: \"The \" + msg.payload.camera + \" camera is \" + msg.payload.switch,\n    }\n}\n\nreturn msg;",
+        "func": "if (msg.payload.switch == \"on\") {\n    msg.payload = {\n        message: \"The \" + msg.payload.camera + \" camera is \" + msg.payload.switch,\n        url: \"https://cameras.yourdomain.com/\" + msg.payload.camera\n    }\n}\nelse {\n    msg.payload = {\n        message: \"The \" + msg.payload.camera + \" camera is \" + msg.payload.switch,\n    }\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
