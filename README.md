@@ -1,4 +1,4 @@
-# Low-code Automations
+# Low-Code Automations
 
 A self-hosted, low-code home/edge automation platform built around [Node-RED](https://nodered.org/), fronted by NGINX with TLS, and backed by etcd for dynamic configuration. It includes a camera automation module that provisions and manages Raspberry Pi–based motion-detection cameras via Terraform.
 
